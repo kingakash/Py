@@ -1,0 +1,14 @@
+def ls(ar,item):
+  for i in range(len(ar)):
+    if ar[i]==item:
+      print(item,' is found at index',i)
+      break
+
+ar=[]
+r=int(input('Enter the size = '))
+for i in range(r):
+  i=int(input('Enter no at '+str(i)+' pos is = '))
+  ar.append(i)
+print(ar)
+item=int(input('Enter no to search = '))
+ls(ar,item)
