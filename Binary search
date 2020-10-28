@@ -1,0 +1,32 @@
+def bsearch(ar, x): 
+    beg = 0
+    end = len(ar) - 1
+    mid = 0
+  
+    while beg <= end: 
+  
+        mid = (end + beg) // 2
+  
+        if ar[mid] < x: 
+            beg = mid + 1
+  
+        elif ar[mid] > x: 
+            end = mid - 1
+  
+        else: 
+            return mid 
+    return -1
+  
+ar=[]
+r=int(input('Enter the size = '))
+for i in range(r):
+  i=int(input('Enter no at '+str(i)+' pos is = '))
+  ar.append(i)
+ar.sort()
+print(ar)
+x=int(input('Enter no to search = '))
+result = bsearch(ar, x)
+if result != -1:
+  print ("Element is present at index "+str(result))
+else:
+  print ("Element is not present in array") 
