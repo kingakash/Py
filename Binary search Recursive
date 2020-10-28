@@ -1,0 +1,41 @@
+def binary_search(ar, low, high, x): 
+  
+     
+    if high >= low: 
+  
+        mid = (high + low) // 2
+  
+        
+        if ar[mid] == x: 
+            return mid 
+  
+       
+   
+        elif ar[mid] > x: 
+            return binary_search(ar, low, mid - 1, x) 
+  
+      
+        else: 
+            return binary_search(ar, mid + 1, high, x) 
+  
+    else: 
+        
+        return -1
+  
+
+ar=[]
+r=int(input('Enter the size = '))
+for i in range(r):
+  i=int(input('Enter no at '+str(i)+' pos is = '))
+  ar.append(i)
+ar.sort()
+print(ar)
+x=int(input('Enter no to search = '))
+  
+# Function call 
+result = binary_search(ar, 0, len(ar)-1, x) 
+  
+if result != -1: 
+    print("Element is present at index", str(result)) 
+else: 
+    print("Element is not present in array") 
